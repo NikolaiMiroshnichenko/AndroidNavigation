@@ -15,6 +15,8 @@ namespace App1
     {
         private LinearLayout _linearLayout;
         private Android.Support.V7.Widget.Toolbar _toolbar;
+
+
         protected override void OnCreate(Bundle savedInstanceState)
         {
             base.OnCreate(savedInstanceState);
@@ -24,13 +26,12 @@ namespace App1
             _toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
             SetSupportActionBar(_toolbar);
 
-
             _linearLayout = FindViewById<LinearLayout>(Resource.Id.rootLayout);
 
             var transaction = SupportFragmentManager.BeginTransaction();
-            transaction.Replace(Resource.Id.rootLayout, new StartFragment());
+            transaction.Replace(Resource.Id.rootLayout, new PlanetsListFragment());
             transaction.Commit();
-            _toolbar.Click += toolbarClick;
+            _toolbar.NavigationClick += toolbarClick;
         }
 
         private void toolbarClick(object sender, EventArgs e)
@@ -43,21 +44,6 @@ namespace App1
             MenuInflater.Inflate(Resource.Menu.menu_main, menu);
             return true;
         }
-
-        //public override bool OnOptionsItemSelected(IMenuItem item)
-        //{
-        //    int id = item.ItemId;
-        //    if (id == 16908332)
-        //    {
-        //        //var transaction = SupportFragmentManager.BeginTransaction();
-        //        //transaction.Replace(Resource.Id.rootLayout, new StartFragment());
-        //        //transaction.Commit();
-        //        //return true;
-        //        OnBackPressed();
-        //    }
-  
-        //    return true;
-        //}
 
         public override void OnRequestPermissionsResult(int requestCode, string[] permissions, [GeneratedEnum] Android.Content.PM.Permission[] grantResults)
         {
