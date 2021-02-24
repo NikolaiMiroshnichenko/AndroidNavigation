@@ -1,16 +1,10 @@
-﻿using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
+﻿using Android.Content;
 using Android.Support.V7.Widget;
 using Android.Views;
-using Android.Widget;
 using App1.Models;
 using App1.ViewHolders;
-using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace App1.Adapters
 {

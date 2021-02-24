@@ -1,12 +1,7 @@
-﻿using Android.App;
-using Android.Content;
-using Android.OS;
-using Android.Runtime;
+﻿using Android.OS;
 using Android.Support.Design.Widget;
 using Android.Support.V7.Widget;
-using Android.Util;
 using Android.Views;
-using Android.Widget;
 using App1.Adapters;
 using App1.Models;
 using App1.Services;
@@ -14,16 +9,14 @@ using ModernHttpClient;
 using Refit;
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
-using System.Text;
 using System.Threading.Tasks;
+
 namespace App1.Fragments
 {
     public class PlanetsListFragment : Android.Support.V4.App.Fragment
     {
         private FloatingActionButton _fab;
-
         private IPlanetsApi _planetsApi;
         private RecyclerView _recyclerView;
         private List<Planet> _planets = new List<Planet>();
@@ -47,6 +40,7 @@ namespace App1.Fragments
             _recyclerView.SetLayoutManager(new LinearLayoutManager(Activity));
             _recyclerView.SetAdapter(_adapter);
             _fab = view.FindViewById<FloatingActionButton>(Resource.Id.fab);
+
             return view;
         }
 
