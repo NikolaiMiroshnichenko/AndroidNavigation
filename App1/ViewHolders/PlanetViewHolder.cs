@@ -6,13 +6,15 @@ namespace App1.ViewHolders
 {
     public class PlanetViewHolder : RecyclerView.ViewHolder
     {
-        public TextView nameTW, terrainTW, poppulationTW;
+        public TextView NameTextView { get; internal set; } 
+        public TextView TerrainTextView { get; internal set; }
+        public TextView PoppulationTextView { get; internal set; }
 
         public PlanetViewHolder(View view) : base(view)
         {
-            nameTW = (TextView)view.FindViewById(Resource.Id.nameTextView);
-            terrainTW = (TextView)view.FindViewById(Resource.Id.terrainTextView);
-            poppulationTW = (TextView)view.FindViewById(Resource.Id.poppulationTextView);
+            NameTextView = (TextView)view.FindViewById(Resource.Id.nameTextView);
+            TerrainTextView = (TextView)view.FindViewById(Resource.Id.terrainTextView);
+            PoppulationTextView = (TextView)view.FindViewById(Resource.Id.poppulationTextView);
         }
     }
 }

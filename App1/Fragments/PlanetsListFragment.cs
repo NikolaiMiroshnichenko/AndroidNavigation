@@ -47,7 +47,7 @@ namespace App1.Fragments
         public override void OnResume()
         {
             Activity.Title = "Planets List";
-            _fab.Click += NavigteToFragment;
+            _fab.Click += NavigateToFragment;
             if (Activity is MainActivity activity)
             {
                 activity.SupportActionBar.SetDisplayHomeAsUpEnabled(false);
@@ -57,11 +57,11 @@ namespace App1.Fragments
 
         public override void OnStop()
         {
-            _fab.Click -= NavigteToFragment;
+            _fab.Click -= NavigateToFragment;
             base.OnStop();
         }
 
-        private void NavigteToFragment(object sender, EventArgs e)
+        private void NavigateToFragment(object sender, EventArgs e)
         {
             Activity.Title = "SecondFragment";
             var transaction = Activity.SupportFragmentManager.BeginTransaction();

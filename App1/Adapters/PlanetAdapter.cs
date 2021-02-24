@@ -10,8 +10,8 @@ namespace App1.Adapters
 {
     public class PlanetAdapter : RecyclerView.Adapter
     {
-        private LayoutInflater _inflater;
-        private List<Planet> _planets;
+        private readonly LayoutInflater _inflater;
+        private readonly List<Planet> _planets;
 
         public override int ItemCount => _planets.Count;
 
@@ -31,9 +31,9 @@ namespace App1.Adapters
         {
             Planet planet = _planets.ElementAt(position);
             var planetVH = (PlanetViewHolder)holder;
-            planetVH.nameTW.Text = planet.Name;
-            planetVH.terrainTW.Text = planet.Terrain;
-            planetVH.poppulationTW.Text = planet.Population;
+            planetVH.NameTextView.Text = planet.Name;
+            planetVH.TerrainTextView.Text = planet.Terrain;
+            planetVH.PoppulationTextView.Text = planet.Population;
         }
     }
 }
